@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Thymeleaf Example</title>
+</head>
+
+<body id = "mainbody">
+
+    <!-- Button that links to a POST request -->
+    <h2>Pastebin</h2>
+    <form th:action="@{/add}" th:object="${buton}" method="post">
+        
+        <label for="inputbox">Enter your text:</label>
+        <input type="text" id = "inputbox" th:field="*{text}" required/>
+
+        <button type="submit" onclick = "addBtn()">Submit</button>
+    </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>   
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</body>
+</html>
