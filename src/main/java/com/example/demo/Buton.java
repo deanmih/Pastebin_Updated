@@ -13,7 +13,6 @@ public class Buton {
     private Long id;
     private String text;
 
-    // Getters and setters
     public String getText() {
         return text;
     }
