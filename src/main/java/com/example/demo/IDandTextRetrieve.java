@@ -23,10 +23,7 @@ public class IDandTextRetrieve {
 
     @GetMapping("/getTextById/{id}")
     public ResponseEntity<String> getTextById(@PathVariable Long id) {
-        // Fetch the button entity by ID
         Optional<Buton> buton = butonRepository.findById(id);
-        
-        // Return the text if found, or 404 if not found
         return buton.map(b -> ResponseEntity.ok(b.getText()))
                     .orElse(ResponseEntity.notFound().build());
     }
